@@ -1,0 +1,56 @@
+<!-- <!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>First App</title>
+    </head>
+    <body>
+        <h1>Hello this is index.html !</h1>
+        {{ insert_me }}
+    </body>
+</html> -->
+<!-- <!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Django Guitar Page</title>
+        <link rel="stylesheet" href="{% static "css/myStyle.css" %}">
+    </head>
+    <body>
+        <h1>Hi, This is a picture of Django himself !</h1>
+        <img src="{% static "images/djangoguitar.jpg" %}" alt="Uh oh, didn't show!">
+    </body>
+</html> -->
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Django Level Two</title>
+        <link rel="stylesheet" href="{% static "css/myStyle.css" %}">
+    </head>
+    <body>
+        <h1> Hi welcome to Django level two!</h1>
+        <h2>Here are you are access records:</h2>
+        <div class="djangotwo">
+            {% if access_records %}
+            <table>
+                <thead>
+                    <th>Site Name</th>
+                    <th>Date Accessed</th>
+                </thead>
+
+                {% for acc in access_records %}
+                <tr>
+                    <td>{{acc.name}}</td>
+                    <td>{{acc.date}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            {% else %}
+            <p>No Access Record Found!</p>
+            {% endif  %}
+        </div>
+    </body>
+</html>
